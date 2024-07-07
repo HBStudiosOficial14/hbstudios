@@ -137,6 +137,110 @@ body {
     animation: wave-horizontal 10s linear infinite, wave-vertical-6 9.5s ease-in-out infinite;
 }
 
+/*ANIMACION DE OLAS PARTE DE ARRIBA*/
+.wave-container-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg)
+}
+
+.waves-top {
+    position: relative;
+    width: 200%;
+    height: 100%;
+    animation: wave-horizontal 30s linear infinite;
+}
+
+@keyframes wave-horizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes wave-vertical-1 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes wave-vertical-2 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+@keyframes wave-vertical-3 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes wave-vertical-4 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(25px);
+    }
+}
+
+@keyframes wave-vertical-5 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes wave-vertical-6 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+.moving-waves use:nth-child(1) {
+    animation: wave-horizontal 10s linear infinite, wave-vertical-1 8s ease-in-out infinite;
+}
+
+.moving-waves use:nth-child(2) {
+    animation: wave-horizontal 10s linear infinite, wave-vertical-2 8.5s ease-in-out infinite;
+}
+
+.moving-waves use:nth-child(3) {
+    animation: wave-horizontal 10s linear infinite, wave-vertical-3 9s ease-in-out infinite;
+}
+
+.moving-waves use:nth-child(4) {
+    animation: wave-horizontal 10s linear infinite, wave-vertical-4 8.2s ease-in-out infinite;
+}
+
+.moving-waves use:nth-child(5) {
+    animation: wave-horizontal 10s linear infinite, wave-vertical-5 8.8s ease-in-out infinite;
+}
+
+.moving-waves use:nth-child(6) {
+    animation: wave-horizontal 10s linear infinite, wave-vertical-6 9.5s ease-in-out infinite;
+}
 
 
 .header .container {
