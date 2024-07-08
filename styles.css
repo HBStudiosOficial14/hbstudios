@@ -398,11 +398,13 @@ body {
 .contenido2 {
     padding: 20px;
     max-width: 800px;
+    margin-top: 10px;
 }
 
 .contenido3 {
     padding: 20px;
     max-width: 800px;
+    margin-top: 10px;
 }
 
 .footer {
