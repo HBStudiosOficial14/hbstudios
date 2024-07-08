@@ -1,0 +1,255 @@
+.contacto{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contacto .contenido{
+    max-width: 800px;
+    text-align: center;  
+}
+
+.contacto .contenido h2{
+    font-size: 3em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.contacto .contenido p{
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 300;
+}
+
+.contenedor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.contenedor .infocontacto{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor .infocontacto .cajon{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    cursor: pointer;
+}
+
+.contenedor .infocontacto .cajon .iconos{
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    background: repeating-conic-gradient(from 27.5deg, #0052A4 0%,#0052A4 10%,transparent 10%, transparent 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .infocontacto .cajon .iconos::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from 117.5deg, #0052A4 0%,#0052A4 10%,transparent 10%, transparent 50%);
+}
+
+.contenedor .infocontacto .cajon .iconos::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #222328;
+}
+
+.contenedor .infocontacto .cajon .iconos b{
+    position: absolute;
+    inset: 8px;
+    background: #00BFFF;
+    z-index: 2;
+}
+
+.contenedor .infocontacto .cajon .iconos i{
+    position: relative;
+    z-index: 1000;
+    color: #333;
+    font-size: 1.25em;
+}
+
+.contenedor .infocontacto .cajon .texto{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 1.1em;
+    color: #fff;
+    font-family: 300;
+}
+
+.contenedor .infocontacto .cajon .texto h3{
+    font-weight: 500;
+    color: #00BFFF;
+}
+
+.contenedor .infocontacto .txt{
+    position: relative;
+    color: #fff;
+    display: flex;
+    margin-top: 50px;
+    font-weight: 500;
+    border-left: 50px solid #00BFFF;
+    padding-left: 10px;
+    line-height: 1em;
+}
+
+.contenedor .infocontacto .sci{
+    position: relative;
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.contenedor .infocontacto .sci li{
+    list-style: none;
+}
+
+.contenedor .infocontacto .sci li a{
+    color: #fff;
+    font-size: 1.5em;
+    transition: 0.25s;
+}
+
+.contenedor .infocontacto .sci li a:hover{
+    color: #0052A4;
+    filter: drop-shadow(0 0 5px #01dbc2);
+}
+
+.contenedor .formulario{
+    position: relative;
+    width: 70%;
+    background: repeating-conic-gradient(from var(--a), #0052A4 0%,#01dbc2 10%,transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    padding: 60px;
+}
+.contenedor .formulario::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from var(--a), #0052A4 0%,#01dbc2 10%,transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+
+.contenedor .formulario::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 15px solid #222;
+    background:#333;
+}
+
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes animate{
+    0%{
+        --a: 0deg;
+    }
+    100%{
+        --a: 360deg;
+    }
+}
+
+.contenedor .formulario form{
+    position: relative;
+    z-index: 10;
+}
+
+.contenedor .formulario form h2{
+    font-size: 2em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.contenedor .formulario form .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 20px; 
+}
+
+.contenedor .formulario form .inputBox input,
+.contenedor .formulario form .inputBox textarea{
+    width: 100% !important;
+    padding: 5px 0;
+    font-size: 1.1em;
+    margin: 10px 0;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #00BFFF;
+    color: #fff;
+    outline: none;
+    resize: none;
+}
+
+.contenedor .formulario form .inputBox input span{
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.contenedor .formulario form .inputBox input:focus ~ span,
+.contenedor .formulario form .inputBox textarea:focus ~ span,
+.contenedor .formulario form .inputBox input:valid ~ span,
+.contenedor .formulario form .inputBox textarea:valid ~ span{
+    color: #00BFFF;
+    font-size: 0.9em;
+    transform: translateY(-24px);
+}
+
+.contenedor .formulario form .inputBox input[type="submit"]{
+    width: 100%;
+    background: #0052A4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/*RESPONSIVE*/
+@media(max-width: 991px){
+    .contacto{
+        padding: 50px;
+    }
+    .contenedor{
+        flex-direction: column;
+    }
+    .contenedor .infocontacto,
+    .contenedor .formulario{
+        width: 100%;
+    }
+    .contenedor .formulario{
+        padding: 40px;
+    }
+    .contenedor .formulario form{
+        padding: 10px;
+    }
+}
