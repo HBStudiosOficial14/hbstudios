@@ -1,0 +1,234 @@
+/*ESTO CONTROLA EL BODY DEL CALENDARIO*/
+.calendario{
+    display: flex;
+    justify-content: left !important;
+    align-items: center; /* Asegura que los elementos se alineen en la parte superior */
+    width: 95%;
+    gap: 15px;
+}
+
+/* ESTO CONTROLA EL CONTENEDOR DE LOS DÍAS DE LA SEMANA */
+.week  {
+    color: #222327;
+    display: flex;
+    gap: 5px;
+    height: 70px; /* Reducir la altura */
+    padding: 10px 20px; /* Reducir el padding */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* CONTROLA EL LISTADO DE LOS DÍAS DE LA SEMANA */
+.week li {
+    list-style: none;
+    height: 40px; /* Reducir la altura */
+    width: 40px; /* Reducir el ancho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.75em; /* Reducir el tamaño de la fuente */
+}
+
+/* CONTROLA EL CONTENEDOR DEL DÍA */
+.week li.current {
+    position: relative;
+    background: #013ADF;
+    height: 60px; /* Reducir la altura */
+    width: 55px; /* Reducir el ancho */
+    font-size: 0.8em; /* Reducir el tamaño de la fuente */
+    color: #fff;
+    border: 3px solid #222327; /* Reducir el borde */
+    transform: translateY(-30px); /* Ajustar la posición */
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/*CONTROLA LOS BORDE IZQUIERDO*/
+.week li.current::before {
+    content: '';
+    position: absolute;
+    left: -16px; /* Ajustar la posición */
+    top: 17px; /* Ajustar la posición */
+    width: 13px; /* Reducir el ancho */
+    height: 13px; /* Reducir la altura */
+    background: #39393E;
+    border-top-right-radius: 10px;
+    box-shadow: 3px -3px #222327;
+}
+/*CONTROLA LOS BORDE DERECHO*/
+.week li.current::after {
+    content: '';
+    position: absolute;
+    right: -16px; /* Ajustar la posición */
+    top: 17px; /* Ajustar la posición */
+    width: 13px; /* Reducir el ancho */
+    height: 13px; /* Reducir la altura */
+    background: #39393E;
+    border-top-left-radius: 10px;
+    box-shadow: -3px -3px #222327;
+}
+
+/*CONTROLA EL NUMERO DEL DIA*/
+.week li.current h1 {
+    position: absolute;
+    transform: translateY(40px); /* Ajustar la posición */
+    font-size: 1.3em; /* Reducir el tamaño de la fuente */
+    color: #fff;
+}
+
+/*CONTROLA EL MES DEL AÑO*/
+.week li.current h5 {
+    position: absolute;
+    transform: translateY(55px); /* Ajustar la posición */
+    font-size: 0.8em; /* Reducir el tamaño de la fuente */
+    color: #fff;
+    font-weight: 500;
+}
+/*CONTROLA EL AÑO*/
+.week li.current h3 {
+    position: absolute;
+    margin-left: 3px;
+    transform: translateY(-35px); /* Ajustar la posición */
+    font-size: 0.75em; /* Reducir el tamaño de la fuente */
+    color: #fff;
+    font-weight: 500;
+}
+
+/*ESTO CONTROLA EL CONTENEDOR DEL RELOJ*/
+.reloj{
+    display: flex;
+    justify-content: right;
+    align-items: right; /* Asegura que los elementos se alineen en la parte superior */
+    width: 95%;
+    gap: 15px;
+    margin-top: -55px;
+    
+    margin-bottom: 40px;
+}
+
+/*ESTO CONTROLA LOS ELEMENTOS DEL RELOJ*/
+.reloj .digital {
+    position: relative;
+    width: 75px;
+    color: #fff;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+    height: 75px; /* Reducir la altura */
+    padding: 10px 20px; /* Reducir el padding */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+}
+
+/*ESTO CONTROLA EL RELLENO DEL RELOJ*/
+.reloj .digital .screen{
+    position: absolute;
+    inset: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #152b4a;
+    border-radius: 20px;
+}
+
+/*ESTO CONTROLA EL EL TEXTO QUE SE MUESTRA DE HORAS, MINUTOS, SEGUNDOS*/
+.reloj .digital .screen::before{
+    content: attr(data-text);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.75);
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+/*ESTO CONTROLA LOS NUMEROS*/
+.reloj .digital .time{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+}
+
+/*ESTO CONTROLA EL DIV DE CADA NUMERO Y LE ASIGNA SU COLOR POR DEFECTO*/
+.reloj .digital .time div{
+    position: relative;
+    font-size: 1.9em;
+    color: var(--crl);
+    letter-spacing: 0.010em;
+    margin-left: 0.010em;
+}
+
+.reloj .digital:nth-last-child(2) .time div{
+    color: transparent;
+    -webkit-text-stroke: 1px var(--crl);
+}
+
+.reloj .digital:last-child::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #152b4a;
+    border: 1px solid #fff;
+    z-index: 10000;
+    border-radius: 50%;
+}
+
+.reloj .digital:last-child::after{
+    content: '';
+    position: absolute;
+    inset: 14px;
+    background: #152b4a;
+    border-radius: 50%;
+}
+
+.box{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 20px;
+    background: var(--crl);
+    border-radius: 4px;
+}
+
+.box:nth-child(1):after{
+    height: 20px;
+    width: 2px;
+}
+
+.box:nth-child(2):after{
+    height: 22px;
+    width: 1px;
+}
+
+
+#ampm{
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.75);
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
