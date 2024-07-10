@@ -102,6 +102,119 @@
             </div> 
         </header>
 
+         <!--DIV PARA CONTROLAR EL CALENDARIO-->
+        <div class="calendario">
+            <p>Hoy es:</p>
+                <ul class="week">
+                <li>Lun.</li>
+                <li>Mar.</li>
+                <li>Mie.</li>
+                <li>Jue.</li>
+                <li>Vie.</li>
+                <li>Sab.</li>
+                <li>Dom.</li>
+            </ul>
+
+            <script>
+                let months = ["Enero","Febrero","Marzo","Abril","Mayo",
+                    "Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+
+                let date = new Date();
+                let dayNum = date.getDay();
+
+                let day = date.getDate();
+                let month = months[date.getMonth()];
+                let year = date.getFullYear();
+
+                let active = document.querySelector(".week li:nth-child("+dayNum+")");
+                active.classList.add('current');
+
+                let h1 = document.createElement('h1');
+                h1.innerHTML = day;
+                active.appendChild(h1);
+
+                let h5 = document.createElement('h5');
+                h5.innerHTML = month;
+                active.appendChild(h5);
+
+                let h3 = document.createElement('h3');
+                h3.innerHTML = year;
+                active.appendChild(h3);
+            </script>
+        </div>
+        <!--FIN DEL DIV PARA EL CALENDARIO-->
+
+        <!--INICIO DEL DIV PARA EL RELOJ-->
+        <div class="reloj">
+            <p>Son las:</p>
+            <div class="digital" style="--crl: #ff2972;">
+                <div class="screen" data-text="Hrs.">
+                    <div class="time">
+                        <div id="hour"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="digital" style="--crl: #fee800;">
+                <div class="screen" data-text="Min.">
+                    <div class="time">
+                        <div id="minutes"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="digital" style="--crl: #04fc43;">
+                <div class="screen" data-text="Seg.">
+                    <div class="time">
+                        <div id="seconds"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="digital">
+                <div class="box" id="hr" style="--crl: #ff2972;"></div>
+                <div class="box" id="mn" style="--crl: #fee800;"></div>
+                <div class="box" id="sg"  style="--crl: #04fc43;"></div>
+                <div id="ampm"></div>
+            </div>
+        </div>
+        <script>
+        let hours = document.getElementById('hour');
+        let minute = document.getElementById('minutes');
+        let second = document.getElementById('seconds');
+        let ampm = document.getElementById('ampm');
+
+        let hr = document.querySelector("#hr");
+        let mn = document.querySelector("#mn");
+        let sg = document.querySelector("#sg");
+
+
+
+        setInterval(() => {
+            let h = new Date().getHours();
+            let m = new Date().getMinutes();
+            let s = new Date().getSeconds();
+
+            var am = h >= 12 ? 'PM' : 'AM';
+            
+            //CONVERTIMOS EL FORMATO DE 24HRS A FORMATO DE 12HRS.
+            if(h > 12){
+                h = h -12;
+            }
+
+            //SI LA HORA, LOS MINUTOS O SEGUNDOS SON MENORES A 10 SE AÑADE UN 0 A LA IZQUIERDA DE CADA UNO
+            h = (h<10) ? "0" * h : h;
+            m = (m<10) ? "0" + m : m;
+            s = (s<10) ? "0" + s : s;
+
+            hours.innerHTML = h;
+            minute.innerHTML = m;
+            second.innerHTML = s;
+            ampm.innerHTML = am;
+            hr.style.transform = `rotateZ(${h * 30}deg)`;
+            mn.style.transform = `rotateZ(${m * 6}deg)`;
+            sg.style.transform = `rotateZ(${s * 6}deg)`;
+        })
+        </script>
+        <!--FIN DEL DIV PARA EL RELOJ-->
+
           <!--CONTROLA EL CONTENEDOR DE CONTACTO-->
         <section class="contacto">
             <div class="contenido">
