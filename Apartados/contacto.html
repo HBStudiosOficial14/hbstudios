@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<head>
+    <title>Contacto HBStudios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!------------------------------STYLES PARA CHAT WHATSAPP SUPPORT-------------------------------->
+    <link rel="stylesheet" href="../plugin/components/Font Awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../plugin/whatsapp-chat-support.css">
+<!----------------------------------------------------------------------------------------------->
+
+    <link rel="stylesheet" type="text/css" href="../css/contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+
+
+<!----------------------------HEADER O CABECERA------------------------------------------------------->
+    <header class="header">
+        <div class="menu container">
+            <a href="../index.html" class="logo">HBStudios</a>
+            <input type="checkbox" id="menu"/>
+            <label for="menu">
+                <img src="https://i.pinimg.com/474x/98/43/ee/9843eeb5cc80af7ff3eea8adc04a3265.jpg" class="menu-icono" alt="">
+            </label>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="Descargar.html">Descargar apps</a></li>
+                    <li><a href="quienes_somos.html">Quienes Somos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-content container">
+            <h1></h1>
+            <p></p>
+        </div>
+    </header>
+<!---------------------------------------------------------------------------------------------------->
+
+
+
+<!-------------------------SECCIÓN DE DATOS PARA CONTACTO--------------------------------------------->
+    <section class="contacto">
+        <div class="contenido">
+            <h3>CONTACTANOS</h3>
+            <span>Quieres colaborar con nosotros o probar las betas de nuestros futuros lanzamientos.? contactanos llenando el 
+                siguiente formulario, visita nuestras redes sociales o contacta a nuestro equipo de soporte.!!
+            </span>
+        </div>
+        <div class="contenedor">
+            <div class="infocontacto">
+                <div class="cajon">
+                    <div class="iconos"><b></b><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="texto">
+                        <h3>Dirección</h3>
+                        <p>CP. 30700 - Tapachula Chis.</p>
+                    </div>
+                </div>
+                <div class="cajon">
+                    <div class="iconos"><b></b><i class="fa-solid fa-phone"></i></div>
+                    <div class="texto">
+                        <h3>Telefono</h3>
+                        <p>No disponible por el momento</p>
+                    </div>
+                </div>
+                <div class="cajon">
+                    <div class="iconos"><b></b><i class="fa-solid fa-envelope"></i></div>
+                    <div class="texto">
+                        <h3>Email</h3>
+                        <p>hbstudiosoficial14@gmail.com</p>
+                    </div>
+                </div>
+
+                <h2 class="txt">Contactanos</h2>
+                <u1 class="sci">
+                    <li><a href="https://www.facebook.com/profile.php?id=61561686689001"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://youtube.com/@hbstudiosoficial14?si=Lrs63kv1B2C0tMJd"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="https://www.instagram.com/hb_studios14?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i></a></li>
+                </u1>
+            </div>
+            
+            <!---------------------------------------FORMULARIO------------------------------------------------->
+            <div class="formulario">
+                <form id="contactForm" action="https://formspree.io/f/xldrbryp" method="POST">
+                    <h2>Enviar Mensaje</h2>
+                    <div class="inputBox">
+                        <input type="text" name="name" required="required">
+                        <span>Nombre completo</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" name="email" required="required">
+                        <span>Correo</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea name="message" required="required"></textarea>
+                        <span>Ingresa tu mensaje</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+            
+        <!---------------IMPORTANTE PARA MANEJAR EL ENVIO DEL FORMULARIO------------------->
+            <script>
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault(); 
+            
+                var form = event.target;
+                var formData = new FormData(form);
+            
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        alert('Mensaje enviado correctamente');
+                        form.reset(); 
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                alert(data["errors"].map(error => error["message"]).join(", "));
+                            } else {
+                                alert('Hubo un problema al enviar el formulario');
+                            }
+                        })
+                    }
+                }).catch(error => {
+                    alert('Hubo un problema al enviar el formulario');
+                });
+            });
+            </script>
+        <!--------------------------------------------------------------------------------->
+            
+        </div>
+    </section>
+<!---------------------------------------------------------------------------------------------------->
+
+
+
+
+    <!------------------------------------------FOOTER------------------------------------------------>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61561686689001"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="https://www.instagram.com/hb_studios14?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://whatsapp.com/channel/0029VaeFE7vJ3jv0723pXa1P"><ion-icon name="logo-whatsapp"></ion-icon></a>
+            <a href="https://youtube.com/@hbstudiosoficial14?si=Lrs63kv1B2C0tMJd"><ion-icon name="logo-youtube"></ion-icon></a>
+            <a href="https://play.google.com/store/apps/dev?id=5916610870676162063"><ion-icon name="logo-google-playstore"></ion-icon></a>
+        </div>
+        <p>Copyright © 2023 - <script>document.write(new Date().getFullYear())</script> | HBStudios.</p>
+        <p>All rights reserved</p>
+    </footer>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!----------------------------------------------------------------------------------------------->
+
+
+
+
+
+    <!------------------------ESTRUCTURA PARA EL BOTÓN DE WHATSAPP----------------------------------->
+  <div class="whatsapp_chat_support wcs_fixed_right" id="button-w">
+    <div class="wcs_button_label">
+            Contáctanos
+        </div>  
+    <div class="wcs_button wcs_button_circle">
+        <span class="fa fa-whatsapp"></span>
+    </div>  
+ 
+    <div class="wcs_popup">
+        <div class="wcs_popup_close">
+            <span class="fa fa-close"></span>
+        </div>
+        <div class="wcs_popup_header">
+            <span class="fa fa-whatsapp"></span>
+            <strong>Asistencia y Soporte de HBStudios</strong>
+            
+            <div class="wcs_popup_header_description">¿Deseas ser un Beta Tester o Necesitas ayuda? Chatea con nosotros en Whatsapp!!</div>
+
+        </div>  
+        <div class="wcs_popup_input" 
+            data-number="529622144484"
+            data-availability='{ "monday":"09:00-18:00", "tuesday":"09:00-18:00", "wednesday":"09:00-18:00", "thursday":"09:00-18:00", 
+            "friday":"09:00-18:00", "saturday":"09:00-14:30", "sunday":"" }'>
+            <input type="text" placeholder="Escribe tu pregunta aqui" />
+            <i class="fa fa-play"></i>
+        </div>
+        <div class="wcs_popup_avatar">
+            <img src="/images/logo.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+
+    <!-- jQuery 1.8+ -->
+<script src="../plugin/components/jQuery/jquery-1.11.3.min.js"></script>
+    <!-- Plugin JS file -->
+<script src="../plugin/components/moment/moment.min.js"></script>
+<script src="../plugin/components/moment/moment-timezone-with-data.min.js"></script> <!-- spanish language (es) -->
+<script src="../plugin/whatsapp-chat-support.js"></script>
+<script>
+   $('#button-w').whatsappChatSupport({
+        defaultMsg : '',
+    });
+</script>
+
+    <!----------------------------------------------------------------------------------------------->
+    
+</body>
+</html>

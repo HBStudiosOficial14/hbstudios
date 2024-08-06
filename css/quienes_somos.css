@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/*ESTILOS GENERALES DE TODA LA PAGINA*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --crl0: #FFFFFF;
+    --crl1: #222328;
+    --crl2: #0052A4;
+    --crl3: #0052A4;
+}
+
+body {
+    background: var(--crl1);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*ESTILOS DEL CONTENEDOR DEL HEADER*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*ESTILOS PARA LA IMAGEN DE FONDO EN EL HEADER*/
+.header {
+    background-image: url(../images/HB_Desarrollador.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/*ESTILOS PARA EL MENU Y LA BARRA DE NAVEGACIÓN*/
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #FFBF00;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo:hover {
+    color: #0404B4;
+}
+
+.logo img {
+    width: 100px;
+    height: 50px;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #FFBF00;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #0404B4;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+/*ESTILOS PARA EL HEADER O CABECERA DE LA PAGINA*/
+.header-content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.header-content h1 {
+    font-size: 75px;
+    line-height: 80px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #C5C5C5;
+    padding: 0 250px;
+    margin-bottom: 25px;
+}
+
+/* SECCIÓN HISTORIA DE LA EMPRESA */
+.Historia {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.Historia h3 {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.Historia .text-historia {
+    width: 80%;
+}
+
+.Historia .text-historia p {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin-bottom: 10px;
+}
+
+.h1titulov{
+    margin-top: 70px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*ESTILOS PARA LA SECCIÓN INICIO Y EQUIPO*/
+.inicio {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    margin-bottom: 10px;
+}
+
+.inicio h1 {
+    justify-content: center;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.container-equipo {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.container-equipo .card {
+    position: relative;
+    height: 400px;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 20px;
+    box-shadow: 0px 0px 20px #00FFBF;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.container-equipo .card .content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.container-equipo .card:hover .content {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+.container-equipo .card .content .imgBx {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid rgba(0, 0, 0, 0.25);
+}
+
+.container-equipo .card .content .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-equipo .card .content .contentBx h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 10px;
+    line-height: 1.1em;
+}
+
+.container-equipo .card .content .contentBx h3 span {
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.container-equipo .card .sci {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+}
+
+.container-equipo .card .sci li {
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: calc(0.1s * var(--i));
+}
+
+.container-equipo .card:hover .sci li {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.container-equipo .card .sci li a {
+    color: #fff;
+    font-size: 24px;
+}
+
+/*ESTILOS PARA LA SECCION MISIÓN, VISIÓN, VALORES*/
+.mvv {
+    padding: 50px 15px;
+    text-align: center;
+    margin-top: -170px;
+}
+
+/*ESTILOS PARA LA SECCION MISIÓN, VISIÓN, VALORES*/
+.mvv h1 {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.general {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.general > div {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    color: #FFFFFF;
+    font-weight: 300;
+    text-align: justify;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 0px 20px rgba(1, 223, 215, 1);
+    margin: 20px 0;
+    border-radius: 15px;
+}
+
+.general .general-2, .general .general-3, .general .general-4 {
+    background-image: url(/images/logo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 0px 20px rgba(88, 211, 247, 1);
+    display: block;
+    border-radius: 15px;
+}
+
+/*ESTILOS PARA SECCIÓN IR-CONTACTO*/
+.ir-contacto {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: -25px;
+}
+
+.ir-contacto h1 {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 17px;
+}
+
+.ir-contacto p {
+    margin-bottom: 17px;
+}
+
+.btn-contacto {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #0489B1;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.btn-contacto:hover {
+    background-color: #58D3F7;
+    color: #000000;
+}
+
+/*ESTILOS DEL FOOTER*/
+.footer {
+    background-color: #151515;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer p {
+    margin: 10px 0 0;
+    color: #fff;
+}
+
+.social-icons ion-icon {
+    font-size: 24px;
+}
+
+/*RESPONSIVE DESIGN*/
+@media (max-width: 991px) {
+    .logo img {
+        width: 100px;
+        height: 50px;
+    }
+
+    .menu {
+        padding: 30px;
+    }
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #323337;
+        display: none;
+    }
+
+    .menu .navbar ul li a:hover{
+        color: #FAFAFA;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .header {
+        min-height: 0vh;
+    }
+
+    .header-content {
+        padding: 100px 30px;
+    }
+
+    .header-content p {
+        padding: 0;
+    }
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .general > div {
+        padding: 20px 15px;
+    }
+
+    .general .general-2, .general .general-3, .general .general-4 {
+        height: 200px;
+        display: none; 
+    }
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 550px) {
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-content p {
+        padding: 0 15px;
+    }
+
+    .mvv{
+        margin-top: -30px;
+    }
+
+}
