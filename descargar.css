@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/*ESTILOS GENERALES DE TODA LA PAGINA*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --crl0: #FFFFFF;
+    --crl1: #222328;
+    --crl2: #0052A4;
+    --crl3: #0052A4;
+}
+
+body {
+    background: var(--crl1);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*ESTILOS DEL CONTENEDOR DEL HEADER*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*ESTILOS PARA LA IMAGEN DE FONDO EN EL HEADER*/
+.header {
+    background-image: url(HB_Desarrollador.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/*ESTILOS PARA EL MENU Y LA BARRA DE NAVEGACIÓN*/
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #FFBF00;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo:hover {
+    color: #0404B4;
+}
+
+.logo img {
+    width: 100px;
+    height: 50px;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #FFBF00;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #0404B4;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+/*ESTILOS PARA EL HEADER O CABECERA DE LA PAGINA*/
+.header-content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.header-content h1 {
+    font-size: 75px;
+    line-height: 80px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #C5C5C5;
+    padding: 0 250px;
+    margin-bottom: 25px;
+}
+
+/*ESTILOS PARA MOSTRAR LOS CONTENEDORES DE LAS APPS*/
+.noticias {
+    text-align: center;
+    padding: 40px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.blog-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.blog-heading h3 {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.blog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.blog-box {
+    width: 350px;
+    background-color: var(--crl1);
+    /*border: 1px solid #ececec;*/
+    box-shadow: 0px 0px 20px #0080FF;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.blog-img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-img img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+}
+
+.blog-text {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-text .blog-titulo {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.blog-text .btns {
+    display: flex;
+    background-color: #0080FF;
+}
+
+.ir-blog {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: -70px;
+}
+
+.btn-todo-descarga {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #0489B1;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.btn-todo-descarga:hover {
+    background-color: #58D3F7;
+    color: #000000;
+}
+
+.btn-todo {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #0489B1;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.btn-todo:hover {
+    background-color: #58D3F7;
+    color: #000000;
+}
+
+/*ESTILOS PARA LA SECCIÓN DE CONTENEDORES DE DESCARGA*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.modal-container {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1em;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #000000;
+    font-weight: 400;
+}
+
+.paragraph {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #000000;
+    font-size: 1rem;
+}
+
+/* ESTILOS PARA EL Carousel DEL MODAL */
+.carousel {
+    width: 100%;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .carousel {
+        margin: 0 60px;
+    }
+}
+
+.carousel h2 {
+    font-size: 1.5rem;
+    color: #000000;
+    line-height: 1.5rem;
+    padding-bottom: 1rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+
+#modal-category {
+    color: #000;
+    font-size: 16px;
+}
+
+#modal-category span {
+    font-weight: bold;
+}
+
+#modal-studio {
+    color: #000;
+    font-size: 16px;
+}
+
+#modal-studio span {
+    font-weight: bold;
+}
+
+
+.carousel-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    padding: 10px 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    transition: 0.5s ease-in-out;
+}
+
+.carousel-item {
+    position: relative;
+    width: 120px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+}
+
+.carousel-item a img {
+    object-fit: cover;
+    height: 120px;
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .carousel-item {
+        width: 160px;
+    }
+    .carousel-item a img {
+        width: 140px;
+    }
+}
+
+.carousel-arrow {
+    border-radius: 30px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 4;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+}
+
+.carousel-arrow:focus {
+    outline: 0;
+}
+
+.carousel-arrow svg {
+    width: 12px;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+.modal-img {
+    width: 50%;
+    max-width: 200px;
+}
+
+.btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btns > a {
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.btns .descarga {
+    color: #fff;
+    background-color: #0052A4;
+    border: solid thin white;
+    border-radius: 10px;
+}
+
+.btns .descarga:hover {
+    background-color: #0489B1;
+    color: #000000;
+}
+
+.btns .comparte {
+    color: #fff;
+    background-color: #0052A4;
+    border: solid thin white;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Estilos para el modal al abrir una imagen del carrusel */
+.image-modal {
+    display: none; 
+    position: fixed; 
+    z-index: 20; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-modal-content {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.image-modal .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.image-modal .close:hover,
+.image-modal .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-arrow {
+    border-radius: 30px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+}
+
+.modal-arrow:focus {
+    outline: 0;
+}
+
+.modal-arrow svg {
+    width: 12px;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-prev {
+    left: 10px;
+}
+
+.modal-next {
+    right: 10px;
+}
+
+/*ESTILOS PARA SECCIÓN IR-CONTACTO*/
+.ir-contacto {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: -25px;
+}
+
+.ir-contacto h1 {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 17px;
+}
+
+.ir-contacto p {
+    margin-bottom: 17px;
+}
+
+.btn-contacto {
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #0489B1;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.btn-contacto:hover {
+    background-color: #58D3F7;
+    color: #000000;
+}
+
+/*ESTILOS PARA EL FOOTER*/
+.footer {
+    padding: 100px 0;
+    background-color: #000000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link h3 {
+    font-size: 18px;
+    color: #F9FAFC;
+    margin-bottom: 15px;
+}
+
+.link a {
+    font-size: 16px;
+    color: #C5C5C5;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer {
+    background-color: #151515;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer p {
+    margin: 10px 0 0;
+    color: #fff;
+}
+
+.social-icons ion-icon {
+    font-size: 24px;
+}
+
+/*RESPONSIVE DESING*/
+@media(max-width:991px) {
+    .logo img {
+        width: 100px;
+        height: 50px;
+    }
+
+    .menu {
+        padding: 30px;
+    }
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #323337;
+        display: none;
+    }
+
+    .menu .navbar ul li a:hover{
+        color: #FAFAFA;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .header {
+        min-height: 0vh;
+    }
+
+    .header-content {
+        padding: 100px 30px;
+    }
+
+    .header-content p {
+        padding: 0;
+    }
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
