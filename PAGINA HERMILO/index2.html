@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Articles</title>
+  <style>
+    .pdf-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .pdf-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+    .pdf-item:hover {
+      transform: scale(1.05);
+    }
+    .pdf-item img {
+      width: 100%;
+      height: auto;
+    }
+    .pdf-item p {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 10px 0 5px 0;
+      color: #333;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .modal.active {
+      display: block;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>PDF Articles</h1>
+  <div class="pdf-container" id="pdfContainer"></div>
+
+  <div class="modal" id="pdfModal">
+    <h2 id="pdfName"></h2>
+    <button id="viewBtn">View PDF</button>
+    <button id="downloadBtn">Download PDF</button>
+    <button onclick="closeModal()">Close</button>
+  </div>
+
+  <script>
+    let currentPDFs = [];
+
+    async function fetchPDFs() {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwwFhrP3DI4EOelGrUmPFDLsUl5o-l-r_Kq4o9waAW7RB-cOxyPhrdnajfbykQ6giIB/exec'); // Reemplaza con la URL de tu API
+      const pdfs = await response.json();
+      return pdfs;
+    }
+
+    function updatePDFs(pdfs) {
+      const container = document.getElementById('pdfContainer');
+      container.innerHTML = ''; // Limpiar el contenedor
+
+      pdfs.forEach(pdf => {
+        const item = document.createElement('div');
+        item.classList.add('pdf-item');
+        
+        const img = document.createElement('img');
+        img.src = pdf.imageUrl || 'path/to/your/default-image.png'; // Usa la imagen del PDF o una imagen por defecto
+        img.alt = pdf.nombre;
+
+        const name = document.createElement('p');
+        name.textContent = pdf.nombre;
+
+        item.appendChild(img);
+        item.appendChild(name);
+        item.onclick = () => openModal(pdf);
+
+        container.appendChild(item);
+      });
+    }
+
+    function openModal(pdf) {
+      const modal = document.getElementById('pdfModal');
+      const name = document.getElementById('pdfName');
+      const viewBtn = document.getElementById('viewBtn');
+      const downloadBtn = document.getElementById('downloadBtn');
+
+      name.textContent = pdf.nombre;
+      viewBtn.onclick = () => window.open(pdf.url, '_blank');
+      downloadBtn.onclick = () => window.open(pdf.downloadUrl, '_blank');
+
+      modal.classList.add('active');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('pdfModal');
+      modal.classList.remove('active');
+    }
+
+    async function checkForNewPDFs() {
+      const pdfs = await fetchPDFs();
+      if (JSON.stringify(pdfs) !== JSON.stringify(currentPDFs)) {
+        currentPDFs = pdfs;
+        updatePDFs(pdfs);
+      }
+    }
+
+    // Llamar a la función checkForNewPDFs cada 30 segundos
+    setInterval(checkForNewPDFs, 30000);
+
+    // Llamar a la función inmediatamente para cargar los PDFs al inicio
+    checkForNewPDFs();
+  </script>
+</body>
+</html>

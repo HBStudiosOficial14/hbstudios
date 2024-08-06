@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/*ESTILOS GENERALES DE TODA LA PAGINA*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* ESTILOS PARA LOS LOGOS DE LA PARTE SUPERIOR*/
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #FFFDFC;
+    color: black;
+    flex-wrap: wrap;
+}
+.top-nav .logos {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.top-nav .logos img {
+    height: 60px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.top-nav .icons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.top-nav .icons img {
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*ESTILOS DEL CONTENEDOR DEL HEADER*/
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*ESTILOS PARA LA IMAGEN DE FONDO EN EL HEADER*/
+.header{
+    background-image: 
+        url(https://i.pinimg.com/474x/37/ea/51/37ea514047ab425141ab6a740a7d9384.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    position: relative; 
+}
+
+/*ESTILOS PARA EL MENU Y LA BARRA DE NAVEGACIÓN*/
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecera-logos .logo{
+    color: #FFFDFC;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.cabecera-logos .logo img{
+    width: 100px;
+    height: 50px;
+}
+
+.logo{
+    color: #FFFDFC;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo img{
+    width: 100px;
+    height: 50px;
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a{
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFDFC;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover{
+    color: #1e73be;
+}
+
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+
+/*ESTILOS PARA EL HEADER O CABECERA DE LA PAGINA*/
+.header-content{
+    text-align: center;
+    margin-top: 50px; 
+}
+
+.header-content h1{
+    font-size: 75px;
+    line-height: 80px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.header-content p{
+    font-size: 16px;
+    color: #C5C5C5;
+    padding: 0 250px;
+    margin-bottom: 25px;
+}
+
+/*ESTILOS PARA LOS BOTONES*/
+.btn-1{
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #CE967B;
+    color: #F9FAFC;
+    text-transform: uppercase;
+}
+
+.btn-1:hover{
+    background-color: #ebad8d;
+}
+
+/*ESTILOS PARA EL FOOTER1*/
+.footer{
+    padding: 100px 0;
+    background-color: #000000;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.link h3{
+    font-size: 18px;
+    color: #F9FAFC;
+    margin-bottom: 15px;
+}
+
+.link a{
+    font-size: 16px;
+    color: #C5C5C5;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/*ESTILOS PARA LA SECCIÓN DE CONTACTO*/
+.contacto{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contacto .contenido{
+    max-width: 800px;
+    text-align: center;  
+}
+/*CONTROLA EL TITULO DE CONTACTANOS*/
+.contacto .contenido h2{
+    font-size: 60PX;
+    color: #000000;
+    font-weight: 700;
+}
+/*CONTROLA EL TEXTO DEBAJO DE CONTACTANOS*/
+.contacto .contenido p{
+    font-size: 1.1em;
+    color: #000000;
+    font-weight: 300;
+}
+
+/*ESTO CONTROLA LOS ESTILOS DEL CONTENEDOR DE CONTACTO*/
+.contenedor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.contenedor .infocontacto{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor .infocontacto .cajon{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    cursor: pointer;
+}
+/*CONTROLA LOS ESTILOS DORDES DE LOS RECUADROS DE INFORMACIÓN*/
+.contenedor .infocontacto .cajon .iconos{
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    background: repeating-conic-gradient(from 27.5deg, #0052A4 0%,#0052A4 10%,transparent 10%, transparent 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor .infocontacto .cajon .iconos::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from 117.5deg, #0052A4 0%,#0052A4 10%,transparent 10%, transparent 50%);
+}
+
+/*CONTROLA EL RELLENO DE LOS RECUADROS DE LOS ICONOS DENTRO DE LOS RECUADROS*/
+.contenedor .infocontacto .cajon .iconos::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #fff;
+}
+
+.contenedor .infocontacto .cajon .iconos b{
+    position: absolute;
+    inset: 8px;
+    background: #0B0B61;
+    z-index: 2;
+}
+
+.contenedor .infocontacto .cajon .iconos i{
+    position: relative;
+    z-index: 1000;
+    color: #FFFDFC;
+    font-size: 1.25em;
+}
+
+/*CONTROLA LOS TEXTOS DE INFORMACIÓN*/
+.contenedor .infocontacto .cajon .texto{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 1.1em;
+    color: #000000;
+    font-family: 300;
+}
+/*CONTROLA LOS TEXTOS EMAIL, TELEFONO Y DIRECCION*/
+.contenedor .infocontacto .cajon .texto h3{
+    font-weight: 500;
+    color: #000000
+}
+
+/*CONTROLA EL ESTILO DE CONTACTANOS EN EL APARTADO DE INFORMACIÓN*/
+.contenedor .infocontacto .txt{
+    position: relative;
+    color: #000000;
+    display: flex;
+    margin-top: 50px;
+    font-weight: 500;
+    border-left: 50px solid #210B61;
+    padding-left: 10px;
+    line-height: 1em;
+}
+
+/*CONTROLA LOS ICONOS DE REDES SOCIALES EN CONTACTANOS*/
+.contenedor .infocontacto .sci{
+    position: relative;
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+/*CONTROLA LOS ICONOS DE REDES SOCIALES DEBAJO DE CONTACTANOS*/
+.contenedor .infocontacto .sci li{
+    list-style: none;
+}
+
+.contenedor .infocontacto .sci li a{
+    color: #000000;
+    font-size: 1.5em;
+    transition: 0.25s;
+}
+
+.contenedor .infocontacto .sci li a:hover{
+    color: #0052A4;
+    filter: drop-shadow(0 0 5px #01dbc2);
+}
+
+/*BORDES ANIMADOS DEL FORMULARIO*/
+.contenedor .formulario{
+    position: relative;
+    width: 70%;
+    background: repeating-conic-gradient(from var(--a), #013ADF 0%,#00FF40 10%,transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    padding: 60px;
+}
+.contenedor .formulario::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from var(--a), #013ADF 0%,#00FF40 10%,transparent 10%, transparent 50%);
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+
+/*CONTROLA EL BORDE Y FONDO DEL FORMULARIO*/
+.contenedor .formulario::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 15px solid #FFFF00;
+    background:#0B6138;
+}
+
+/*CONTROLA LA ANIMACIÓN DE COLORES AL REDEDOR DEL FORMULARIO*/
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes animate{
+    0%{
+        --a: 0deg;
+    }
+    100%{
+        --a: 360deg;
+    }
+}
+
+/*CONTROLA EL CONTENIDO DEL FORMULARIO*/
+.contenedor .formulario form{
+    position: relative;
+    z-index: 10;
+}
+/*CONTROLA EL H2 ENVIAR MENSAJE*/
+.contenedor .formulario form h2{
+    font-size: 2em;
+    color: #FFFDFC;
+    font-weight: 500;
+}
+
+.contenedor .formulario form .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 20px; 
+}
+
+/*CONTROLA EL TEXTO ESCRITO EN CADA PARTE DEL FORMULARIO*/
+.contenedor .formulario form .inputBox input,
+.contenedor .formulario form .inputBox textarea{
+    width: 100% !important;
+    padding: 5px 0;
+    font-size: 1.1em;
+    margin: 10px 0;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #FFFDFC;
+    color: #fff;
+    outline: none;
+    resize: none;
+}
+
+.contenedor .formulario form .inputBox input span{
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.contenedor .formulario form .inputBox input:focus ~ span,
+.contenedor .formulario form .inputBox textarea:focus ~ span,
+.contenedor .formulario form .inputBox input:valid ~ span,
+.contenedor .formulario form .inputBox textarea:valid ~ span{
+    color: #FFFDFC;
+    font-size: 0.9em;
+    transform: translateY(-24px);
+}
+
+/*CONTROLA EL BOTON DE ENVIAR EN EL FORMULARIO*/
+.contenedor .formulario form .inputBox input[type="submit"]{
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #FFFDFC;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: 1s;
+    border-radius: 10px;
+}
+
+.contenedor .formulario form .inputBox input[type="submit"]:hover{
+    background: #00FFFF;
+    box-shadow: 0 0 25px #F9FAFC;
+}
+
+/*ESTILOS DEL FOOTER 2*/
+.footer2{
+    background-color: #151515;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer2 .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer2 p {
+    margin: 10px 0 0;
+    color: #fff;
+}
+
+.social-icons ion-icon {
+    font-size: 24px;
+}
+
+/*RESPONSIVE DESING*/
+@media(max-width:991px){
+    .logo img{
+        width: 100px;
+        height: 50px;
+    }
+
+    .top-nav {
+        justify-content: center;
+    }
+    .top-nav .logos {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .top-nav .icons {
+        justify-content: center;
+    }
+
+    .menu{
+        padding: 30px;
+    }
+    .menu label{
+        display: initial;
+    }
+
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #323337;
+        display: none;
+    }
+
+    .menu .navbar ul li{
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar{
+        display: initial;
+    }
+
+    .header{
+        min-height: 0vh;
+    }
+
+    .header-content{
+        padding: 100px 30px;
+    }
+
+    .header-content p{
+        padding: 0;
+    }
+
+
+    .contacto{
+        padding: 50px;
+    }
+    .contenedor{
+        flex-direction: column;
+    }
+    .contenedor .infocontacto,
+    .contenedor .formulario{
+        width: 100%;
+    }
+    .contenedor .formulario{
+        padding: 40px;
+    }
+    .contenedor .formulario form{
+        padding: 10px;
+    }
+
+    .footer, .footer2{
+        padding: 30px;
+    }
+
+    .footer-content{
+        flex-direction: column;
+        text-align: center;
+    }
+}

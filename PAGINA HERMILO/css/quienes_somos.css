@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/*ESTILOS GENERALES DE TODA LA PAGINA*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* ESTILOS PARA LOS LOGOS DE LA PARTE SUPERIOR*/
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #FFFDFC;
+    color: black;
+    flex-wrap: wrap;
+}
+.top-nav .logos {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.top-nav .logos img {
+    height: 60px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.top-nav .icons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.top-nav .icons img {
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/*ESTILOS DEL CONTENEDOR DEL HEADER*/
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*ESTILOS PARA LA IMAGEN DE FONDO EN EL HEADER*/
+.header{
+    background-image: 
+        url(https://i.pinimg.com/474x/37/ea/51/37ea514047ab425141ab6a740a7d9384.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    position: relative; 
+}
+
+/*ESTILOS PARA EL MENU Y LA BARRA DE NAVEGACIÓN*/
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecera-logos .logo{
+    color: #FFFDFC;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.cabecera-logos .logo img{
+    width: 100px;
+    height: 50px;
+}
+
+.logo{
+    color: #FFFDFC;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo img{
+    width: 100px;
+    height: 50px;
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a{
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFDFC;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover{
+    color: #1e73be;
+}
+
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+
+/*ESTILOS PARA EL MENSAJE DE BIENVENIDA*/
+.imagenes-pdf{
+    padding: 100px 0;
+    background-color: #E1E2E6;
+    position: relative;
+}
+
+.pdf-content{
+    text-align: center;
+}
+
+.pdf-content h2 {
+    font-size: 55px;
+    line-height: 70px;
+    color: #323337;
+    text-transform: uppercase;
+    padding: 0 250px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.pdf-content h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #323337;
+    margin: 20px auto 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px; 
+}
+
+
+.txt-p, .txt2-p, .txt3-p, .txt4-p, .txt5-p, .txt6-p{
+    font-size: 18px;
+    color: #414247;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.txt5-p, .txt6-p{
+    font-size: 18px;
+    color: #414247;
+    margin-bottom: 15px;
+    text-align: justify;
+    font-weight: 700;
+}
+
+.pdf-group{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    flex-wrap: wrap; 
+}
+
+.pdf-1{
+    padding: 0 25px;
+    max-width: 900px;
+    margin-top: 10px;
+}
+
+.pdf-1 img{
+    width: 200px;
+    margin-top: 15px;
+    margin-left: 20px; 
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.pdf-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/*ESTILOS PARA EL HEADER O CABECERA DE LA PAGINA*/
+.header-content{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.header-content h1{
+    font-size: 75px;
+    line-height: 80px;
+    color: #F9FAFC;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.header-content p{
+    font-size: 16px;
+    color: #C5C5C5;
+    padding: 0 250px;
+    margin-bottom: 25px;
+}
+
+/*ESTILOS PARA LOS BOTONES*/
+.btn-1{
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #CE967B;
+    color: #F9FAFC;
+    text-transform: uppercase;
+}
+
+.btn-1:hover{
+    background-color: #ebad8d;
+}
+
+/*ESTILOS PARA LOS 2 FOOTERS*/
+.footer{
+    padding: 100px 0;
+    background-color: #000000;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.link h3{
+    font-size: 18px;
+    color: #F9FAFC;
+    margin-bottom: 15px;
+}
+
+.link a{
+    font-size: 16px;
+    color: #C5C5C5;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer2{
+    background-color: #151515;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer2 .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer2 p {
+    margin: 10px 0 0;
+    color: #fff;
+}
+
+.social-icons ion-icon {
+    font-size: 24px;
+}
+
+/*RESPONSIVE DESIGN*/
+@media(max-width:991px){
+    .logo img{
+        width: 100px;
+        height: 50px;
+    }
+
+    .top-nav {
+        justify-content: center;
+    }
+    .top-nav .logos {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .top-nav .icons {
+        justify-content: center;
+    }
+
+    .menu{
+        padding: 30px;
+    }
+    .menu label{
+        display: initial;
+    }
+
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #323337;
+        display: none;
+    }
+
+    .menu .navbar ul li{
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar{
+        display: initial;
+    }
+
+    .header{
+        min-height: 0vh;
+    }
+
+    .header-content{
+        padding: 100px 30px;
+    }
+
+    .header-content p{
+        padding: 0;
+    }
+
+    .footer, .footer2{
+        padding: 30px;
+    }
+
+    .footer-content{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pdf-content h2{
+        font-size: 40px;
+        line-height: 50px;
+        padding: 0 50px;
+    }
+
+    .txt-p, .txt2-p, .txt3-p, .txt4-p, .txt5-p, .txt6-p{
+        font-size: 16px; 
+    }
+
+    .pdf-1 img{
+        width: 150px; 
+        margin-left: 0; 
+        margin-top: 20px;
+    }
+
+    .pdf-group{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pdf-1{
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
